@@ -57,4 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+// Added "New Game" button functionality
+const newGameButton = document.querySelector('.btn');
+
+  newGameButton.addEventListener('click', () => {
+    squares.forEach(square => {
+      square.textContent = '';
+      square.classList.remove('X', 'O');
+    });
+    currentPlayer = 'X';
+    statusDiv.textContent = 'Move your mouse over a square and click to play an X or an O.';
+    statusDiv.classList.remove('you-won');
+  });
 });
